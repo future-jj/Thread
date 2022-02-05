@@ -3,6 +3,9 @@ package com.zjj.thread.concurrency2;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 检验是否为偶数
+ */
 public class EvenChecker implements Runnable{
 
     public IntGenerator generator;

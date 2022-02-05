@@ -11,6 +11,7 @@ public class AttemptLocking {
         //当获取到了锁之后就执行，没有获取到也会执行
         boolean captured=lock.tryLock();
         //避免造成死锁
+
         try{
             System.out.println("tryLock():"+captured);
         }finally {
