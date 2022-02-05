@@ -43,10 +43,9 @@ public class Pair {
             super("Pair values not equal:"+Pair.this);
         }
 
-
     }
 
-    public void checkState(){
+    public  void checkState(){
         if(x!=y){
             throw new PairValuesNotEqualException();
         }

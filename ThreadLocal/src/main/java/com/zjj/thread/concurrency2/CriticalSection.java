@@ -17,7 +17,7 @@ public class CriticalSection {
         executorService.execute(pcheck1);
         executorService.execute(pcheck2);
         try {
-            Thread.sleep(500);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -25,9 +25,9 @@ public class CriticalSection {
         System.exit(0);
     }
 
-    public static void main(String[] args) {
-        PairManager pman1=new PairManager1();
-        PairManager pman2=new PairManager2();
-        testApproaches(pman1,pman2);
-    }
+//    public static void main(String[] args) {
+//        PairManager pman1=new PairManager1();
+//        PairManager pman2=new PairManager2();
+//        testApproaches(pman1,pman2);
+//    }
 }

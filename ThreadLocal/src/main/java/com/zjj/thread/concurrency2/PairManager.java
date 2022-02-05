@@ -5,7 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+//模板方法
 public abstract class PairManager {
+
     AtomicInteger checkCounter=new AtomicInteger(0);
 
     protected Pair p=new Pair();
