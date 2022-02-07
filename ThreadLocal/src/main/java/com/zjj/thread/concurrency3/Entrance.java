@@ -6,7 +6,9 @@ import java.util.List;
 public class Entrance implements Runnable{
 
     private static Count count=new Count();
+    //并且将Count作为Entrance类中的一个静态域进行存储
     private static List<Entrance>  entrances=new ArrayList<>();
+
     private int number=0;
     // Doesn't need synchronization to read
     private final int id;
