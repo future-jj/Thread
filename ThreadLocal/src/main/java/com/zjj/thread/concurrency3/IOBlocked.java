@@ -17,7 +17,6 @@ public class IOBlocked implements Runnable{
 
     @Override
     public void run() {
-
         try {
             System.out.println("waiting for read()");
             in.read();

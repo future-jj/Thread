@@ -3,7 +3,7 @@ package com.zjj.thread.concurrency3;
 /**
  * @Author mi
  * @create 2022/2/7 1:44
- * 不可中断阻塞
+ * 不可中断阻塞，因为synchronized
  */
 public class SynchronizedBlocked implements Runnable{
 
