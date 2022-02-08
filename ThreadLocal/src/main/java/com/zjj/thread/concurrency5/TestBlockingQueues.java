@@ -36,6 +36,7 @@ public class TestBlockingQueues {
             throw new RuntimeException(e);
         }
     }
+
     static void getkey(String message) {
         print(message);
         getkey();
@@ -43,21 +44,31 @@ public class TestBlockingQueues {
     //将LiftOff对象执行串行化
     static void  test(String msg, BlockingQueue<LiftOff> queue) {
         print(msg);
+
         LiftOffRunner runner = new LiftOffRunner(queue);
+        //开启消费者线程
         Thread t = new Thread(runner);
         t.start();
         for(int i = 0; i < 5; i++)
-            runner.add(new LiftOff(5));
+            //主线程是生产者
+            runner.add(new LiftOff(6));
         getkey("Press 'Enter' (" + msg + ")");
         t.interrupt();
         print("Finished " + msg + " test");
     }
     public static void main(String[] args) {
-        test("LinkedBlockingQueue", // Unlimited size
-                new LinkedBlockingQueue<LiftOff>());
-        test("ArrayBlockingQueue", // Fixed size
-                new ArrayBlockingQueue<LiftOff>(3));
-        test("SynchronousQueue", // Size of 1
-                new SynchronousQueue<LiftOff>());
+//        test("LinkedBlockingQueue", // Unlimited size
+//                new LinkedBlockingQueue<LiftOff>());
+//        test("ArrayBlockingQueue", // Fixed size
+//                new ArrayBlockingQueue<LiftOff>(3));
+//        test("SynchronousQueue", // Size of 1
+//                new SynchronousQueue<LiftOff>());
+
+        for (int i=0;i<5;i++){
+            // 为什么会创建一个对象增加一个
+            System.out.println(new LiftOff(5).status());
+        }
+
+
     }
 }
