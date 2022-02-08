@@ -25,6 +25,7 @@ class Chef implements Runnable {
                     restaurant.exec.shutdownNow();
                 }
                 printnb("Order up! ");
+                //
                 synchronized(restaurant.waitPerson) {
                     restaurant.meal = new Meal(count);
                     restaurant.waitPerson.notifyAll();
