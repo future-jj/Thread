@@ -19,6 +19,7 @@ public class HorseRace {
     private ExecutorService exec =
             Executors.newCachedThreadPool();
     private CyclicBarrier barrier;
+
     public HorseRace(int nHorses, final int pause) {
         barrier = new CyclicBarrier(nHorses, new Runnable() {
             public void run() {
@@ -47,6 +48,9 @@ public class HorseRace {
             exec.execute(horse);
         }
     }
+
+//    CyclicBarrier 适合于这样的情况：你希望创建一组任务，他们并行地执行，然后在下一个步骤前进行等待，知道所有的任务都完成
+//    直到所有的任务都完成。它使得所有的并行任务都将在栅栏处列队，因此可以一致地向前移动
     public static void main(String[] args) {
         int nHorses = 7;
         int pause = 200;
